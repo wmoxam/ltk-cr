@@ -5,7 +5,7 @@ require "./widget"
 
 module Ltk
   class PushButton < Widget
-    getter text : String
+    getter down : Bool, hover : Bool, text : String
 
     @hover = false
     @down = false
@@ -69,8 +69,15 @@ module Ltk
     end
 
     protected def paint_event
-      p = Painter.new self
-      p.draw_push_button self, @hover, @down
+      widget_painter.draw
+    end
+
+    private def painter
+      @painter ||= Painter.new self
+    end
+
+    private def widget_painter
+      @widget_painter ||= PushButtonPainter.new self, painter
     end
 
     def text=(@text)
