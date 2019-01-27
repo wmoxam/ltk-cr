@@ -1,11 +1,10 @@
+require "./widget_painter"
+
 module Ltk
-  class PushButtonPainter
-    getter button, painter
+  class PushButtonPainter < WidgetPainter
+    delegate down, focused?, hover, to: widget
 
-    delegate ctx, fill_round_rect, font_extents, to: painter
-    delegate down, focused?, height, hover, text, width, to: button
-
-    def initialize(@button : PushButton, @painter : Painter)
+    def initialize(@widget : PushButton, @painter : Painter)
     end
 
     def draw
