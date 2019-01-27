@@ -79,33 +79,6 @@ module Ltk
       @ctx.fill
     end
 
-    def draw_label(label : Label)
-      w = label.width
-      h = label.height
-
-      # Draw text
-      text = label.text
-
-      extents = @ctx.text_extents text
-      x = case label.alignment
-      when .right? then w - extents.width
-      when .h_center? then (w - extents.width) / 2.0_f64
-      else
-        0.0_f64
-      end
-      y = case label.alignment
-      when .top? then @font_extents.height
-      when .bottom? then h.to_f64 - @font_extents.descent
-      else
-        (h + @font_extents.ascent) / 2.0_f64
-      end
-
-      @ctx.move_to x, y
-
-      @ctx.set_source_rgb 0.85_f64, 0.85_f64, 0.85_f64
-      @ctx.show_text text
-    end
-
     private def apply_brush
       # unless @pattern.is_a? Nil
       #   Cairo.pattern_destroy @pattern

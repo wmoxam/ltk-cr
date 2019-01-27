@@ -26,8 +26,15 @@ module Ltk
     end
 
     protected def paint_event
-      p = Painter.new self
-      p.draw_label self
+      widget_painter.draw
+    end
+
+    private def painter
+      @painter ||= Painter.new self
+    end
+
+    private def widget_painter
+      @widget_painter ||= LabelPainter.new self, painter
     end
 
     def alignment=(align : Alignment)
