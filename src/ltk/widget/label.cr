@@ -29,12 +29,12 @@ module Ltk
       widget_painter.draw
     end
 
-    private def widget_painter
-      @widget_painter ||= LabelPainter.new self, painter
-    end
-
     private def painter
       @painter ||= Painter.new self
+    end
+
+    private def widget_painter
+      @widget_painter ||= LabelPainter.new self, painter
     end
 
     def alignment=(align : Alignment)

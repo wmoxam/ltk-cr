@@ -80,7 +80,6 @@ module Ltk
       @painter ||= Painter.new self
     end
 
-
     def text=(@text)
       self.repaint
     end
