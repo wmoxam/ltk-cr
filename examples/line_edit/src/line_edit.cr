@@ -24,6 +24,22 @@ module LineEdit
       line_edit.focus!
       #p line_edit.focused?
 
+      # Creating The Main Window.
+      main_win2 = MainWindow.new
+      main_win2.object_name = "main_win"
+      main_win2.title = "Ltk-Win"
+      main_win2.geometry = Rect.new 10, 10, 190, 113
+
+      # Creating a PushButton on the Main Window.
+      label = Label.new "Label", main_win2
+      label.object_name = "label"
+      label.geometry = Rect.new 20, 20, 150, 23
+
+      # Creating a PushButton on the Main Window.
+      push_button2 = PushButton.new "PushButton", main_win2
+      push_button2.object_name = "push_button"
+      push_button2.geometry = Rect.new 20, 40, 150, 23
+
       # Runs the application.
       Application.run ARGV
     end
