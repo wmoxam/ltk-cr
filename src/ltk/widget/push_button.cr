@@ -76,10 +76,6 @@ module Ltk
       @widget_painter ||= PushButtonPainter.new self, painter
     end
 
-    private def painter
-      @painter ||= Painter.new self
-    end
-
     def text=(@text)
       self.repaint
     end

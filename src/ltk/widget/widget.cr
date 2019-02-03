@@ -178,15 +178,14 @@ module Ltk
     # protected def paint_event
     #   self.widget_painter.draw
     # end
-    #
-    # private def painter
-    #   @painter ||= Painter.new self
-    # end
+
+    private def painter
+      @painter ||= Painter.new self
+    end
 
     # private def widget_painter
     #   @widget_painter ||= LineEditPainter.new self, painter
     # end
-
 
     def repaint
       self.paint_event

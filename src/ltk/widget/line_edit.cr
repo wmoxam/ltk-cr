@@ -97,10 +97,6 @@ module Ltk
       widget_painter.draw
     end
 
-    private def painter
-      @painter ||= Painter.new self
-    end
-
     private def widget_painter
       @widget_painter ||= LineEditPainter.new self, painter
     end
