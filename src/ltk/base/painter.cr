@@ -22,10 +22,12 @@ module Ltk
       @ctx = Cairo::Context.new @surface
       # @pattern = nil
 
-      @ctx.select_font_face("Sans",
-        Cairo::FontSlant::Normal,
-        Cairo::FontWeight::Normal)
-      @ctx.font_size = 12.0_f64
+      @ctx.select_font_face(
+        widget.font.family,
+        widget.font.slant,
+        widget.font.weight
+      )
+      @ctx.font_size = widget.font.size
 
       @font_extents = @ctx.font_extents
 

@@ -2,14 +2,11 @@ require "../enums/font_slant"
 require "../enums/font_weight"
 
 class Ltk::Style
-  DEFAULT_FONT = Font.new("Sans", 12.0_f64, FontSlant::Normal, FontWeight::Normal)
+
 
   def initialize
   end
 
-  def default_font : Font
-    DEFAULT_FONT
-  end
 
   def draw_label(p : Painter, label : Label)
     w = label.width

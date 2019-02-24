@@ -47,7 +47,7 @@ module Ltk
       @screen = @display.default_screen
       create_window
 
-      @font = style.default_font
+      @font = WidgetPainter::DEFAULT_FONT
     end
 
     def finalize
