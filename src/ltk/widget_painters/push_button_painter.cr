@@ -66,11 +66,6 @@ module Ltk
     end
 
     private def draw_text!
-      ctx.select_font_face("Sans",
-        Cairo::FontSlant::Normal,
-        Cairo::FontWeight::Normal)
-      ctx.font_size = 12.0_f64
-
       extents = ctx.text_extents text
       x = (width / 2.0_f64) - (extents.width / 2 + extents.x_bearing)
       y = (height / 2.0_f64) - (font_extents.height / 2 - font_extents.ascent)
